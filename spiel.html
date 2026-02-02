@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Spiel</title>
+</head>
+<body>
+<h1>Zahlen-Raten-Spiel</h1>
+<p>Rate eine Zahl zwischen 1 und 10</p>
+
+<input type="number" id="eingabe">
+<button onclick="raten()">Raten</button>
+
+<p id="ausgabe"></p>
+<script>
+    let geheim = Math.floor(Math.random() * 10) + 1;
+    function raten() {
+        let tipp = document.getElementById("eingabe").value;
+
+        if (tipp == geheim) {
+            document.getElementById("ausgabe").innerText =
+                "Richtig! 🎉";
+        } else {
+            document.getElementById("ausgabe").innerText =
+                "Falsch 😢 Versuch es nochmal";
+        }
+    }
+
+</script>
+
+</body>
+</html>
